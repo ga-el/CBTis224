@@ -1,0 +1,191 @@
+<style is:global>
+:root {
+  --rojo-cbtis: #a9211f;
+  --negro-cbtis: #181818;
+  --gris-oscuro: #232323;
+  --blanco: #fff;
+  --gris-texto: #e0e0e0;
+  --gris-borde: #333;
+}
+body {
+  background: var(--negro-cbtis);
+  color: var(--gris-texto);
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+.main-container {
+  background: var(--gris-oscuro);
+  color: var(--gris-texto);
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: var(--rojo-cbtis);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 6px solid var(--negro-cbtis);
+}
+.banner-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  opacity: 0.7;
+  filter: grayscale(10%) contrast(1.1);
+}
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--blanco);
+  background: rgba(25, 25, 25, 0.45);
+  text-shadow: 1px 1px 12px #000;
+  font-size: 1.2rem;
+}
+.banner-overlay h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 0.5rem 0;
+  color: var(--blanco);
+  text-transform: uppercase;
+}
+.banner-overlay p {
+  font-size: 1.2rem;
+  color: #ffeaea;
+  margin: 0;
+}
+.noticias-section, .convocatorias-section, .ubicacion-section {
+  margin: 2.5rem auto 2rem auto;
+  max-width: 1100px;
+  padding: 1.5rem 1rem;
+  background: var(--gris-oscuro);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  border: 1.5px solid var(--gris-borde);
+}
+.noticias-section h2, .convocatorias-section h2, .ubicacion-section h2 {
+  color: var(--rojo-cbtis);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.noticias-grid, .convocatorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.noticia-img, .convocatoria-img {
+  width: 100%;
+  border-radius: 18px;
+  border: 3px solid var(--rojo-cbtis);
+  box-shadow: 0 4px 24px rgba(169,33,31,0.10), 0 2px 8px rgba(0,0,0,0.10);
+  background: var(--blanco);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.noticia-img:hover, .convocatoria-img:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 8px 32px rgba(169,33,31,0.18), 0 4px 16px rgba(0,0,0,0.18);
+  z-index: 2;
+}
+.ubicacion-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  background: #222;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 1.5px solid var(--rojo-cbtis);
+}
+.ubicacion-card p {
+  color: var(--gris-texto);
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+}
+.ubicacion-card iframe {
+  border-radius: 12px;
+  border: 2px solid var(--rojo-cbtis);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.footer {
+  background: var(--negro-cbtis);
+  color: var(--gris-texto);
+  padding: 2rem 0 1rem 0;
+  margin-top: 3rem;
+  border-top: 4px solid var(--rojo-cbtis);
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+.footer-content h3 {
+  color: var(--rojo-cbtis);
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+.footer-content ul {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0;
+}
+.footer-content li {
+  margin-bottom: 0.4rem;
+  color: var(--gris-texto);
+  font-size: 1rem;
+}
+.footer-social img {
+  width: 44px;
+  margin-right: 1rem;
+  border-radius: 8px;
+  background: var(--gris-oscuro);
+  border: 2px solid var(--rojo-cbtis);
+  transition: box-shadow 0.2s;
+}
+.footer-social img:hover {
+  box-shadow: 0 2px 12px var(--rojo-cbtis);
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #bbb;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 900px) {
+  .footer-content, .noticias-section, .convocatorias-section, .ubicacion-section {
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+  }
+  .ubicacion-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  .banner-section, .banner-img {
+    height: 180px;
+  }
+  .banner-overlay h1 {
+    font-size: 1.3rem;
+  }
+  .banner-overlay p {
+    font-size: 0.9rem;
+  }
+  .noticias-section h2, .convocatorias-section h2, .ubicacion-section h2 {
+    font-size: 1.2rem;
+  }
+}
+</style>
