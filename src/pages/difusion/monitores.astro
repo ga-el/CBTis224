@@ -1,8 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
 <meta charset="UTF-8" />
 <link rel="icon" type="image/png" href="/img/logo.png" />
 
 <!-- HEADER -->
 <header class="header">
+  <!-- Botón hamburguesa SIEMPRE visible en móvil, fuera del .header-container -->
+  <div class="header-container">
+    
+    <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false" tabindex="0">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Menú móvil oculto por defecto -->
+  <nav class="mobile-menu" id="mobile-menu" aria-hidden="true" tabindex="-1">
+    <div class="mobile-menu-header">
+      <img src="/img/logo.png" alt="CBTis 224" class="mobile-menu-logo" />
+      <div style="flex:1; min-width:0;">
+        <span class="mobile-menu-title">CBTis No. 224</span><br />
+        <span class="mobile-menu-sub">"Gral. Salvador Alvarado Rubio"</span>
+      </div>
+      <button class="close-mobile-menu" id="close-mobile-menu" aria-label="Cerrar menú">&times;</button>
+    </div>
+    <ul class="menu">
+      <li class="dropdown">
+        <a href=""><span class="menu-icon">🔗</span> VINCUlACION <span class="submenu-arrow">▶</span></a>
+        <ul class="submenu">
+          <li><a href="/vinculacion/formatos">Formato Prácticas Profesionales</a></li>
+          <li><a href="/vinculacion/practicas">Prácticas Profesionales</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href=""><span class="menu-icon">🏫</span> Servicios Escolares <span class="submenu-arrow">▶</span></a>
+        <ul class="submenu">
+          <li class="dropdown">
+            <a href=""><span class="menu-icon">📋</span> Control Escolar <span class="submenu-arrow">▶</span></a>
+            <ul class="submenu">
+              <li><a href="https://drive.google.com/file/d/1qJBAVFd0afWLLt8UxOP8dBccA_JExoUU/view?usp=sharing" target="_blank" rel="noopener noreferrer">Reglamento Escolar</a></li>
+              <li><a href="https://drive.google.com/file/d/160S863a1Eaw6opG8qCorF4_wLbCGgoyY/view" target="_blank" rel="noopener noreferrer">Tríptico Informativo</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href=""><span class="menu-icon">🤝</span> Servicio Social <span class="submenu-arrow">▶</span></a>
+            <ul class="submenu">
+              <li><a href="/servicio/informacion">Información Servicio</a></li>
+              <li><a href="/servicio/procedimiento">Procedimiento</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href=""><span class="menu-icon">🎓</span> Orientación Educativa <span class="submenu-arrow">▶</span></a>
+            <ul class="submenu">
+              <li><a href="#">Beca Benito Juárez</a></li>
+              <li><a href="/orientacion/sexualidad">Aprendamos sobre Sexualidad</a></li>
+              <li><a href="/orientacion/identidad de genero">Identidad de Género</a></li>
+              <li><a href="/orientacion/salud%20sexual">Salud Sexual y Reproductiva</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href=""><span class="menu-icon">🏅</span> Difusión Cultural y Deportiva <span class="submenu-arrow">▶</span></a>
+            <ul class="submenu">
+              <li><a href="/difusion/monitores">Monitores - Act COCURRICULARES</a></li>
+            </ul>
+          </li>
+          <li><a href=""><span class="menu-icon">👨‍🏫</span> Tutorías</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href=""><span class="menu-icon">📚</span> Servicios Docentes <span class="submenu-arrow">▶</span></a>
+        <ul class="submenu">
+          <li><a href="/servicios%20docentes/asesorias">Asesorías Académicas</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href=""><span class="menu-icon">💰</span> Recursos Financieros <span class="submenu-arrow">▶</span></a>
+        <ul class="submenu">
+          <li><a href="/finacieros/solicitudes">Solicitud de Trámites</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href=""><span class="menu-icon">👨‍🎓</span> Alumnos <span class="submenu-arrow">▶</span></a>
+        <ul class="submenu">
+          <li class="dropdown">
+            <a href=""><span class="menu-icon">🗓️</span> Horarios Feb-Jul 2023 <span class="submenu-arrow">▶</span></a>
+            <ul class="submenu">
+              <li><a href="https://drive.google.com/file/d/1DJ2pltiqMnpfB0k_SspnDRnqowExz2Rr/view?usp=sharing">2° Semestre</a></li>
+              <li><a href="https://drive.google.com/file/d/1DJ2pltiqMnpfB0k_SspnDRnqowExz2Rr/view?usp=sharing">4° Semestre</a></li>
+              <li><a href="https://drive.google.com/file/d/1DJ2pltiqMnpfB0k_SspnDRnqowExz2Rr/view?usp=sharing">6° Semestre</a></li>
+            </ul>
+          </li>
+          <li><a href="/asesorias/asesorias"><span class="menu-icon">📖</span> Asesorías Académicas</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
   <div class="header-container">
     <a href="/" class="intituciones-link"
       ><span class="institucion"
@@ -11,7 +104,7 @@
         ></span
       ></a
     >
-    <nav class="nav">
+    <nav class="nav" id="desktop-nav">
       <ul class="menu">
         <li class="dropdown">
           <a href="">VINCUlACION </a>
@@ -76,20 +169,16 @@
                 <li><a href="https://drive.google.com/file/d/1DJ2pltiqMnpfB0k_SspnDRnqowExz2Rr/view?usp=sharing">2° Semestre</a></li>
                 <li><a href="https://drive.google.com/file/d/1DJ2pltiqMnpfB0k_SspnDRnqowExz2Rr/view?usp=sharing">4° Semestre</a></li>
                 <li><a href="https://drive.google.com/file/d/1DJ2pltiqMnpfB0k_SspnDRnqowExz2Rr/view?usp=sharing">6° Semestre</a></li>
+
               </ul>
             </li>
-            <li><a href="#">ASESORÍAS ACADÉMICAS</a></li>
+            <li><a href="/asesorias/asesorias">ASESORÍAS ACADÉMICAS</a></li>
           </ul>
         </li>
       </ul>
     </nav>
   </div>
 </header>
-<!-- Botones minimalistas y discretos: Conócenos y Directorio -->
-<div class="botones-discretos-container">
-  <a href="/conocenos" class="boton-discreto">Conócenos</a>
-  <a href="/directorio" class="boton-discreto">Directorio</a>
-</div>
 
 <main class="main-container page-fade-in">
   
@@ -302,6 +391,7 @@
     }
   </style>
 </main>
+ 
 
 <!-- Footer moderno -->
 <footer class="footer">
@@ -320,13 +410,13 @@
     <div>
       <h3>Visitanos en:</h3>
       <div class="footer-social">
-        <a href="#"
+        <a href="https://www.instagram.com/cbtis224culiacan/"
           ><img
             src="https://imgs.search.brave.com/oRl23zldVYTXVqL7g-lEtFm1WdghxiGe6WCGKyV_EPE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzMwLzIvaW5zdGFn/cmFtLWxvZ28tcG5n/X3NlZWtsb2dvLTMw/NjQ1Mi5wbmc"
             alt="Instagram"
           /></a
         >
-        <a href="#"
+        <a href="https://www.facebook.com/cbtis224.oficial"
           ><img
             src="https://imgs.search.brave.com/0GVBszIWxyirsVauSFhsTtutcu-wRusCe33EJokuPUA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzcwL2I5/LzNhLzcwYjkzYWY3/MGY2MzdmMmQ4YTJk/ZWM0MmJmY2YyM2Y4/LmpwZw"
             alt="Facebook"
@@ -342,27 +432,64 @@
 </footer>
 
 <script>
-  // Animación de entrada global
   window.addEventListener("DOMContentLoaded", () => {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    if (!hamburgerBtn) { console.log('No se encontró el botón hamburguesa'); return; }
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = document.getElementById('close-mobile-menu');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    // Animación de entrada global
     const main = document.querySelector(".main-container");
     if (main) main.classList.add("show");
-  });
-
-  // Animaciones al hacer scroll para .card
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("scroll-animate");
-          observer.unobserve(entry.target);
+    // Animaciones al hacer scroll para .card
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-animate");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll(".card").forEach((card) => {
+      observer.observe(card);
+    });
+    // Menú hamburguesa móvil
+    function openMobileMenu() {
+      console.log('Abriendo menú hamburguesa');
+      if (mobileMenu && mobileMenuBackdrop && hamburgerBtn) {
+        mobileMenu.classList.add('open');
+        mobileMenuBackdrop.classList.add('show');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeMenu() {
+      if (mobileMenu && mobileMenuBackdrop && hamburgerBtn) {
+        mobileMenu.classList.remove('open');
+        mobileMenuBackdrop.classList.remove('show');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+    hamburgerBtn.addEventListener('click', openMobileMenu);
+    hamburgerBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openMobileMenu(); });
+    if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMenu);
+    if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMenu);
+    // Submenús tipo acordeón en móvil
+    document.querySelectorAll('.mobile-menu .dropdown > a').forEach(link => {
+      link.addEventListener('click', function(this: HTMLAnchorElement, e) {
+        e.preventDefault();
+        const submenu = this.nextElementSibling;
+        if (submenu && submenu.classList.contains('submenu')) {
+          submenu.classList.toggle('open');
         }
       });
-    },
-    { threshold: 0.15 }
-  );
-
-  document.querySelectorAll(".card").forEach((card) => {
-    observer.observe(card);
+    });
   });
 </script>
 
@@ -971,230 +1098,862 @@
   .fade-in {
     animation: fadeInUp 0.7s cubic-bezier(0.4, 2, 0.6, 1);
   }
-  .full-width-section {
-    width: 100%;
-    position: relative;
-    background: linear-gradient(90deg, #232323 0%, #a9211f 100%);
-    padding: 0;
-    min-height: 100vh;
+  .conocenos-btn-container {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
-    z-index: 1;
+    margin: 1.5rem 0 0.5rem 0;
   }
-  .expediente-card {
-    background: rgba(24, 24, 24, 0.98);
-    border-radius: 22px;
-    box-shadow: 0 8px 40px rgba(169, 33, 31, 0.18), 0 2px 8px rgba(0,0,0,0.18);
-    max-width: 820px;
-    width: 98vw;
-    margin: 3.5rem 0 2.5rem 0;
-    padding: 2.5rem 2.2rem 2.2rem 2.2rem;
-    border: 2.5px solid var(--rojo-cbtis);
-    position: relative;
-    z-index: 2;
-  }
-  .expediente-desc {
-    font-size: 1.13rem;
-    color: #ffeaea;
-    margin-bottom: 2.2rem;
-    margin-top: 0.7rem;
-    text-align: left;
-  }
-  .expediente-list {
-    list-style: none;
-    counter-reset: expediente;
-    padding: 0;
-    margin: 0;
-  }
-  .expediente-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    margin-bottom: 1.7rem;
-    background: rgba(35,35,35,0.85);
-    border-radius: 12px;
-    padding: 1.1rem 1.2rem 1.1rem 0.7rem;
-    box-shadow: 0 2px 12px rgba(169,33,31,0.07);
-    border-left: 6px solid var(--rojo-cbtis);
-    position: relative;
-    transition: background 0.2s;
-  }
-  .expediente-list li:hover {
-    background: rgba(169,33,31,0.13);
-  }
-  .expediente-num {
-    font-size: 2.1rem;
-    font-weight: 900;
-    color: var(--rojo-cbtis);
-    min-width: 2.5rem;
-    text-align: center;
-    margin-top: 0.1rem;
-    font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-    filter: drop-shadow(0 2px 2px #0008);
-  }
-  .expediente-list strong {
+  .conocenos-btn {
+    background: var(--rojo-cbtis);
     color: var(--blanco);
     font-size: 1.08rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-  }
-  .expediente-list a {
-    color: #ffb3b3;
-    text-decoration: underline;
     font-weight: 600;
-    transition: color 0.18s;
+    padding: 0.7rem 2.2rem;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: background 0.18s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    outline: none;
+    display: inline-block;
   }
-  .expediente-list a:hover {
-    color: #fff;
+  .conocenos-btn:hover, .conocenos-btn:focus {
+    background: var(--rojo-hover);
+    color: var(--blanco);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 18px rgba(169,33,31,0.18);
   }
-  .expediente-detalle {
-    color: #e0e0e0;
-    font-size: 1.01rem;
+  .botones-discretos-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.2rem 0 0.5rem 0;
+  }
+  .boton-discreto {
+    background: transparent;
+    color: var(--gris-texto);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.4rem 1.3rem;
+    border: 1.2px solid var(--gris-borde);
+    border-radius: 22px;
+    transition: background 0.15s, color 0.15s, border 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    outline: none;
+    box-shadow: none;
+    opacity: 0.85;
+  }
+  .boton-discreto:hover, .boton-discreto:focus {
+    background: var(--gris-borde);
+    color: var(--rojo-cbtis);
+    border-color: var(--rojo-cbtis);
+    opacity: 1;
+  }
+  .conocenos-btn-container, .conocenos-btn {
+    display: none !important;
+  }
+  /* Hamburguesa */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: #222;
+    border: 2px solid var(--rojo-cbtis);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1200;
+    margin: 0.5rem 0 0 1rem;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    box-shadow: 0 2px 8px #000a;
+  }
+  .hamburger span {
     display: block;
-    margin-top: 0.3rem;
-    line-height: 1.5;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: var(--blanco);
+    border-radius: 2px;
+    transition: 0.3s;
   }
   @media (max-width: 900px) {
-    .expediente-card {
-      padding: 1.2rem 0.5rem 1.2rem 0.5rem;
-      max-width: 99vw;
+    .nav#desktop-nav {
+      display: none !important;
     }
-    .full-width-section {
-      min-height: unset;
+    .hamburger {
+      display: flex !important;
+      right: 10px;
+      left: auto;
     }
-  }
-  @media (max-width: 600px) {
-    .expediente-card {
-      padding: 0.7rem 0.1rem 0.7rem 0.1rem;
-      margin: 1.2rem 0 1.2rem 0;
-    }
-    .expediente-num {
-      font-size: 1.3rem;
-      min-width: 1.5rem;
-    }
-    .expediente-list li {
-      padding: 0.7rem 0.5rem 0.7rem 0.3rem;
-      margin-bottom: 1rem;
-    }
-    .expediente-desc {
-      font-size: 0.98rem;
+    /* Elimina display y transform de aquí, ya que los controlamos globalmente */
+    .mobile-menu-backdrop {
+      display: block;
     }
   }
-  .pasos-expediente {
-    width: 100%;
-    max-width: 700px;
-    margin: 2.5rem auto 2.5rem auto;
-    padding: 2.5rem 1.2rem 2rem 1.2rem;
-    background: rgba(24,24,24,0.98);
-    border-radius: 22px;
-    box-shadow: 0 8px 40px rgba(169, 33, 31, 0.18), 0 2px 8px rgba(0,0,0,0.18);
-    border: 2.5px solid var(--rojo-cbtis);
-    position: relative;
-    z-index: 2;
-    text-align: center;
-  }
-  .pasos-container {
-    display: flex;
+  /* Menú móvil */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; left: auto;
+    width: 80vw;
+    max-width: 340px;
+    height: 100vh;
+    background: var(--gris-oscuro);
+    box-shadow: -2px 0 24px #000a;
+    z-index: 2000;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 2.2rem;
-    margin-bottom: 1.5rem;
+    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    overflow-y: auto;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+    transform: translateX(100%);
+    /* Oculto por defecto */
+    pointer-events: none;
+    opacity: 0;
   }
-  .paso-card {
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-    color: #fff;
-    position: relative;
-    text-align: left;
-    display: flex;
+  @media (max-width: 900px) {
+    .mobile-menu {
+      display: flex;
+    }
+  }
+  .mobile-menu.open {
+    transform: translateX(0);
+    pointer-events: auto;
+    opacity: 1;
+  }
+  .mobile-menu .close-mobile-menu {
+    background: none;
+    border: none;
+    color: var(--blanco);
+    font-size: 2.2rem;
+    align-self: flex-end;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+  }
+  .mobile-menu .menu {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 0.2rem;
   }
-  .paso1 {
-    background: linear-gradient(90deg, #a9211f 60%, #d32f2f 100%);
-    border-left: 8px solid #fff;
+  .mobile-menu .submenu {
+    display: none;
+    position: static;
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    animation: none;
   }
-  .paso2 {
-    background: linear-gradient(90deg, #1e7fc7 60%, #3ad0ff 100%);
-    border-left: 8px solid #fff;
+  .mobile-menu .submenu.open {
+    display: block;
   }
-  .paso3 {
-    background: linear-gradient(90deg, #4caf50 60%, #b6e36b 100%);
-    border-left: 8px solid #fff;
+  .mobile-menu .dropdown > a::after {
+    content: '\25BC';
+    float: right;
+    margin-left: 8px;
+    font-size: 0.8em;
+    transition: transform 0.2s;
   }
-  .paso-header {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 0.7rem;
+  .mobile-menu .submenu .dropdown > a::after {
+    content: '\25B6';
+    float: right;
+    margin-left: 8px;
+    font-size: 0.8em;
   }
-  .paso-num {
-    font-size: 3.2rem;
-    font-weight: 900;
-    line-height: 1;
-    filter: drop-shadow(0 2px 2px #0008);
-    opacity: 0.9;
+  .mobile-menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.45);
+    z-index: 1500;
+    transition: opacity 0.3s;
+    opacity: 0;
   }
-  .paso-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 0 1px 4px #0007;
-    text-transform: uppercase;
+  .mobile-menu-backdrop.show {
+    display: block;
+    opacity: 1;
   }
-  .paso-list {
-    margin: 0.5rem 0 0 0;
-    padding-left: 1.7rem;
-    font-size: 1.08rem;
-    font-weight: 500;
-    color: #fff;
-  }
-  .paso-list li {
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-    text-shadow: 0 1px 4px #0007;
-  }
-  .paso-arrow {
-    font-size: 2.5rem;
-    color: #fff;
-    opacity: 0.7;
-    margin: 0.2rem 0 0.2rem 0;
-    text-align: center;
-    width: 100%;
-  }
-  .pasos-nota {
-    color: #ffeaea;
-    font-size: 1.01rem;
-    margin-top: 2.2rem;
-    text-align: center;
-    font-style: italic;
-  }
-  @media (max-width: 600px) {
-    .pasos-expediente {
-      padding: 1.1rem 0.2rem 1.1rem 0.2rem;
+  @media (max-width: 900px) {
+    .mobile-menu {
+      display: flex;
+      transform: translateX(-100%);
     }
-    .paso-card {
-      padding: 1rem 0.5rem 0.7rem 0.5rem;
-      max-width: 99vw;
+    .mobile-menu.open {
+      transform: translateX(0);
     }
-    .paso-header {
-      gap: 0.6rem;
+  }
+  /* Mejoras generales para móvil */
+  @media (max-width: 700px) {
+    .header-container {
+      padding: 0.5rem 0.2rem;
     }
-    .paso-num {
-      font-size: 2rem;
+    .banner-section, .banner-img {
+      height: 120px;
     }
-    .paso-title {
+    .banner-overlay h1 {
       font-size: 1.1rem;
     }
-    .paso-list {
-      font-size: 0.98rem;
-      padding-left: 1.1rem;
+    .banner-overlay p {
+      font-size: 0.8rem;
+    }
+    .noticias-section.mejorada, .convocatorias-section.mejorada, .ubicacion-section {
+      padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+      border-radius: 10px;
+    }
+    .noticias-grid.mejorada, .convocatorias-grid.mejorada {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    .card {
+      min-height: 90px;
+      border-radius: 10px;
+    }
+    .card img {
+      height: 50px;
+    }
+    .card-content h3 {
+      font-size: 0.85rem;
+    }
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .footer-content h3 {
+      font-size: 1rem;
+    }
+    .footer-bottom {
+      font-size: 0.9rem;
+    }
+    .ubicacion-card {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.7rem;
+      border-radius: 10px;
+    }
+    .ubicacion-card iframe {
+      height: 180px;
+      border-radius: 8px;
+    }
+    .botones-discretos-container {
+      gap: 0.5rem;
+      margin: 0.7rem 0 0.3rem 0;
+    }
+    .boton-discreto {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 14px;
+    }
+  }
+  /* --- MEJORAS RESPONSIVE PARA TELÉFONOS --- */
+  @media (max-width: 700px) {
+    .noticias-grid.mejorada,
+    .convocatorias-grid.mejorada {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    .noticias-section.mejorada,
+    .convocatorias-section.mejorada {
+      padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+      border-radius: 8px;
+    }
+    .section-title {
+      font-size: 1rem;
+    }
+    .card {
+      min-height: 90px;
+      border-radius: 8px;
+    }
+    .card img {
+      height: 55px;
+      border-radius: 0;
+    }
+    .card-content h3 {
+      font-size: 0.85rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+      padding: 0.5rem 0.2rem;
+    }
+    .institucion {
+      font-size: 1.05rem;
+      text-align: left;
+    }
+    .banner-section {
+      height: 120px;
+      min-height: 90px;
+    }
+    .banner-img {
+      height: 120px;
+      min-height: 90px;
+    }
+    .banner-overlay h1 {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.1rem;
+    }
+    .banner-overlay p {
+      font-size: 0.8rem;
+    }
+    .noticias-section,
+    .convocatorias-section,
+    .ubicacion-section {
+      margin: 0.7rem 0.1rem 0.7rem 0.1rem;
+      padding: 0.7rem 0.1rem 0.4rem 0.1rem;
+      border-radius: 8px;
+    }
+    .noticias-section h2,
+    .convocatorias-section h2,
+    .ubicacion-section h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+    .noticias-grid,
+    .convocatorias-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    .noticia-img,
+    .convocatoria-img {
+      border-radius: 7px;
+      border-width: 2px;
+    }
+    .ubicacion-card {
+      flex-direction: column;
+      gap: 0.6rem;
+      padding: 0.4rem;
+      border-radius: 6px;
+    }
+    .ubicacion-card iframe {
+      width: 100% !important;
+      min-width: 0;
+      height: 140px !important;
+      border-radius: 6px;
+    }
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+      text-align: center;
+      padding: 0 0.2rem;
+    }
+    .footer-content h3 {
+      font-size: 0.95rem;
+    }
+    .footer {
+      padding: 0.7rem 0 0.3rem 0;
+      margin-top: 0.7rem;
+      border-radius: 0;
+    }
+    .footer-content ul {
+      padding-left: 0;
+    }
+    .footer-content li {
+      font-size: 0.85rem;
+    }
+  }
+  /* MEJORAS VISUALES PARA CARDS DE NOTICIAS Y CONVOCATORIAS EN MÓVIL */
+  @media (max-width: 600px) {
+    .noticias-grid.mejorada, .convocatorias-grid.mejorada {
+      gap: 1.1rem;
+      padding: 0 0.1rem;
+    }
+    .card {
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      padding: 0.3rem 0.2rem 0.7rem 0.2rem;
+      min-height: 120px;
+      background: rgba(35, 35, 35, 0.88);
+      border: 1.5px solid var(--rojo-cbtis);
+      margin: 0 0.1rem;
+    }
+    .card img {
+      height: 110px;
+      border-radius: 14px 14px 0 0;
+      object-fit: cover;
+      border-bottom: 2px solid var(--rojo-cbtis);
+      background: #fff;
+    }
+    .card-content {
+      padding: 0.7rem 0.5rem 0.4rem 0.5rem;
+    }
+    .card-content h3 {
+      font-size: 1.02rem;
+      color: var(--blanco);
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+      text-shadow: 0 1px 4px #0007;
+      font-weight: 700;
+    }
+    .card-content p, .card-content span {
+      font-size: 0.93rem;
+      color: var(--gris-texto);
+      line-height: 1.3;
+    }
+  }
+  /* --- HEADER Y BANNER MEJORADOS PARA TELÉFONO --- */
+  @media (max-width: 600px) {
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.35rem 0.7rem 0.22rem 0.7rem;
+      min-height: 44px;
+      gap: 0;
+      background: rgba(30,30,30,0.95);
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+    }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      flex: 1;
+    }
+    .institucion {
+      font-size: 1.03rem;
+      font-weight: 700;
+      color: var(--rojo-cbtis);
+      margin: 0;
+      line-height: 1.1;
+      display: block;
+    }
+    .institucion-sub {
+      font-size: 0.97rem;
+      color: #e0e0e0;
+      margin: 0;
+      line-height: 1.05;
+      display: block;
+    }
+    #hamburger-btn {
+      position: static;
+      margin-left: auto;
+      margin-right: 0;
+      z-index: 20;
+      background: none;
+      border: none;
+      padding: 0.2rem 0.3rem;
+      border-radius: 7px;
+      box-shadow: none;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.17s;
+    }
+    #hamburger-btn:active, #hamburger-btn:focus {
+      background: rgba(255,255,255,0.07);
+    }
+    .banner-section {
+      height: 140px;
+      min-height: 110px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 14px 14px;
+    }
+    .banner-img {
+      height: 140px;
+      min-height: 110px;
+      object-fit: cover;
+      width: 100vw;
+      border-radius: 0 0 14px 14px;
+      filter: brightness(0.93) contrast(1.05);
+    }
+    .banner-overlay {
+      position: absolute;
+      left: 0; right: 0; bottom: 0; top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 0.4rem 0.5rem 0.4rem;
+      background: linear-gradient(to top, rgba(20,20,20,0.84) 60%, rgba(30,30,30,0.20) 100%);
+      border-radius: 0 0 14px 14px;
+    }
+    .banner-overlay h1 {
+      font-size: 1.18rem;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0.15rem;
+      text-shadow: 0 2px 8px #000b, 0 1px 0 #b00a;
+      line-height: 1.1;
+      letter-spacing: 0.4px;
+    }
+    .banner-overlay p {
+      font-size: 0.95rem;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 1px 6px #0008;
+      margin-bottom: 0;
+      line-height: 1.15;
+      max-width: 98vw;
+      overflow-wrap: break-word;
+    }
+  }
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+    border-bottom: 1.5px solid var(--rojo-cbtis);
+    background: rgba(25,25,25,0.98);
+    border-radius: 18px 0 0 0;
+    margin-bottom: 0.7rem;
+    flex-wrap: wrap;
+  }
+  .mobile-menu-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: #fff;
+    border: 2px solid var(--rojo-cbtis);
+    box-shadow: 0 2px 8px #0007;
+    flex-shrink: 0;
+  }
+  .mobile-menu-title {
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--rojo-cbtis);
+    letter-spacing: 1px;
+    flex: 1 1 100%;
+    text-shadow: 1px 1px 8px #000;
+    line-height: 1.1;
+    text-align: left;
+    margin-bottom: 0.1rem;
+    word-break: break-word;
+  }
+  .mobile-menu-sub {
+    font-size: 0.92rem;
+    color: var(--gris-texto);
+    font-weight: 400;
+    display: block;
+    line-height: 1.05;
+    text-align: left;
+    margin-left: 0.1rem;
+    margin-top: -0.2rem;
+    word-break: break-word;
+  }
+  @media (max-width: 900px) {
+    .mobile-menu-header {
+      padding: 0.6rem 0.3rem 0.4rem 0.3rem;
+      gap: 0.4rem;
+    }
+    .mobile-menu-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .mobile-menu-title {
+      font-size: 1.01rem;
+      font-weight: 800;
+      margin-bottom: 0.05rem;
+      line-height: 1.05;
+    }
+    .mobile-menu-sub {
+      font-size: 0.78rem;
+      margin-top: -0.1rem;
+      line-height: 1.01;
+    }
+  }
+  @media (max-width: 700px) and (min-width: 601px) {
+    .mobile-menu-header {
+      padding: 0.4rem 0.2rem 0.3rem 0.2rem;
+      gap: 0.25rem;
+    }
+    .mobile-menu-logo {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+    }
+    .mobile-menu-title {
+      font-size: 0.89rem;
+      margin-bottom: 0.01rem;
+      line-height: 1.01;
+    }
+    .mobile-menu-sub {
+      font-size: 0.68rem;
+      margin-top: -0.08rem;
+      line-height: 1.01;
+    }
+  }
+  @media (min-width: 901px) {
+    .mobile-menu-header {
+      padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+      gap: 0.7rem;
+    }
+    .mobile-menu-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+    }
+    .mobile-menu-title {
+      font-size: 1.18rem;
+      font-weight: 800;
+      margin-bottom: 0.1rem;
+      line-height: 1.1;
+    }
+    .mobile-menu-sub {
+      font-size: 0.92rem;
+      margin-top: -0.2rem;
+      line-height: 1.05;
+    }
+  }
+  .close-mobile-menu {
+    font-size: 2.1rem;
+    color: var(--blanco);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0.2rem 0.7rem;
+    border-radius: 8px;
+    transition: background 0.18s;
+  }
+  .close-mobile-menu:hover, .close-mobile-menu:focus {
+    background: var(--rojo-cbtis);
+    color: var(--blanco);
+  }
+  .mobile-menu .menu {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.2rem 0.2rem 0.7rem 0.2rem;
+  }
+  .mobile-menu .menu > li {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  .mobile-menu .menu > li:last-child {
+    border-bottom: none;
+  }
+  .mobile-menu .menu > li > a {
+    display: flex;
+    align-items: center;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--blanco);
+    padding: 0.7rem 0.7rem 0.7rem 0.2rem;
+    border-radius: 10px;
+    transition: background 0.18s, color 0.18s;
+    position: relative;
+    outline: none;
+  }
+  .mobile-menu .menu > li > a:focus, .mobile-menu .menu > li > a:hover {
+    background: var(--rojo-cbtis);
+    color: var(--blanco);
+  }
+  .menu-icon {
+    margin-right: 0.7rem;
+    font-size: 1.18em;
+    opacity: 0.85;
+  }
+  .submenu-arrow {
+    margin-left: auto;
+    font-size: 1.1em;
+    transition: transform 0.2s;
+  }
+  .mobile-menu .dropdown.open > a .submenu-arrow {
+    transform: rotate(90deg);
+  }
+  .mobile-menu .submenu {
+    display: none;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding-left: 1.2rem;
+    margin-top: 0.1rem;
+    border-left: 2px solid var(--rojo-cbtis);
+    animation: fadeInMenu 0.22s cubic-bezier(.4,2,.6,1);
+    position: static !important;
+    background: none !important;
+    box-shadow: none !important;
+    min-width: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+    z-index: auto;
+  }
+  .mobile-menu .submenu.open {
+    display: flex;
+    animation: fadeInMenu 0.22s cubic-bezier(.4,2,.6,1);
+  }
+  /* Submenús anidados en móvil: verticales, nunca absolutos */
+  .mobile-menu .submenu .submenu {
+    padding-left: 1.2rem;
+    border-left: 1.5px dashed var(--rojo-cbtis);
+    margin-top: 0.1rem;
+    position: static !important;
+    background: none !important;
+    box-shadow: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    min-width: 0 !important;
+    width: 100%;
+    z-index: auto;
+  }
+  /* Animación acordeón */
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  /* Mostrar menú hamburguesa solo en <=1080px */
+  .hamburger {
+    display: none;
+  }
+  @media (max-width: 1200px) {
+    .hamburger {
+      display: flex !important;
+      margin-left: 0;
+      left: auto;
+      right: 1rem;
+    }
+    .nav#desktop-nav {
+      display: none !important;
+    }
+    .mobile-menu {
+      display: flex;
+    }
+  }
+  @media (max-width: 600px) {
+    .hamburger {
+      right: 0.7rem;
+      top: 10px;
+      left: auto;
+      margin-left: 0;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mobile-menu {
+      display: none !important;
+    }
+    .mobile-menu-backdrop {
+      display: none !important;
+    }
+  }
+  @media (max-width: 700px) and (min-width: 401px) {
+    .mobile-menu-header {
+      padding: 0.25rem 0.15rem 0.18rem 0.15rem;
+      gap: 0.13rem;
+      min-height: 38px;
+    }
+    .mobile-menu-logo {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+    .mobile-menu-title {
+      font-size: 0.75rem;
+      margin-bottom: 0.01rem;
+      line-height: 1.01;
+    }
+    .mobile-menu-sub {
+      font-size: 0.58rem;
+      margin-top: -0.06rem;
+      line-height: 1.01;
+    }
+    .hamburger {
+      width: 32px;
+      height: 32px;
+      right: 0.4rem;
+      top: 7px;
+    }
+    /* Banner */
+    .banner-section, .banner-img {
+      height: 110px !important;
+      min-height: 90px;
+      max-height: 140px;
+    }
+    .banner-img {
+      object-fit: cover;
+      width: 100vw;
+      border-radius: 0 0 10px 10px;
+    }
+    .banner-overlay h1 {
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+    .banner-overlay p {
+      font-size: 0.7rem;
+    }
+    /* Cards de noticias y convocatorias */
+    .card {
+      min-height: 80px;
+      border-radius: 8px;
+      padding: 0.2rem 0.1rem 0.5rem 0.1rem;
+    }
+    .card img {
+      height: 60px !important;
+      min-height: 40px;
+      max-height: 80px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      background: #fff;
+    }
+    .card-content {
+      padding: 0.4rem 0.3rem 0.2rem 0.3rem;
+    }
+    .card-content h3 {
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+      line-height: 1.1;
+    }
+    .card-content p, .card-content span {
+      font-size: 0.7rem;
+      line-height: 1.2;
     }
   }
 </style>
+
+<script>
+  // Script para menú hamburguesa responsive (desliza desde la derecha)
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-mobile-menu');
+
+    // Abrir menú
+    hamburgerBtn.addEventListener('click', function () {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+    });
+
+    // Cerrar menú
+    closeBtn.addEventListener('click', function () {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function (e) {
+      if (
+        mobileMenu.classList.contains('open') &&
+        !mobileMenu.contains(e.target) &&
+        !hamburgerBtn.contains(e.target)
+      ) {
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
