@@ -3,17 +3,21 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/png" href="/img/logo.png" />
 
-<!-- HEADER -->
+  <!-- HEADER -->
 <header class="header">
-  <!-- Botón hamburguesa SIEMPRE visible en móvil, fuera del .header-container -->
   <div class="header-container">
-    
+    <a href="/" class="instituciones-link">
+      <span class="institucion">
+        CBTis No. 224<br /><span class="sub">
+          "Gral. Salvador Alvarado Rubio"</span>
+      </span>
+    </a>
     <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false" tabindex="0">
       <span></span><span></span><span></span>
     </button>
-  </div>
   <!-- Menú móvil oculto por defecto -->
   <nav class="mobile-menu" id="mobile-menu" aria-hidden="true" tabindex="-1">
     <div class="mobile-menu-header">
@@ -26,7 +30,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <ul class="menu">
       <li class="dropdown">
-        <a href=""><span class="menu-icon">🔗</span> VINCUlACION <span class="submenu-arrow">▶</span></a>
+        <a href=""><span class="menu-icon">🔗</span> VINCULACIÓN <span class="submenu-arrow">▶</span></a>
         <ul class="submenu">
           <li><a href="/vinculacion/formatos">Formato Prácticas Profesionales</a></li>
           <li><a href="/vinculacion/practicas">Prácticas Profesionales</a></li>
@@ -96,21 +100,14 @@ import Layout from "../layouts/Layout.astro";
     </ul>
   </nav>
   <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
-  <div class="header-container">
-    <a href="/" class="intituciones-link"
-      ><span class="institucion"
-        >CBTis No. 224<br /><span class="sub"
-          >"Gral. Salvador Alvarado Rubio"</span
-        ></span
-      ></a
-    >
+  <div class="desktop-header-container">
     <nav class="nav" id="desktop-nav">
       <ul class="menu">
         <li class="dropdown">
-          <a href="">VINCUlACION </a>
+          <a href="">VINCULACIÓN </a>
           <ul class="submenu">
-            <li><a href="/vinculacion/formatos">FORMATO PRACTICAS PROFESIONALES</a></li>
-            <li><a href="/vinculacion/practicas">PRACTICAS PROFECIONALES</a></li>
+            <li><a href="/vinculacion/formatos">FORMATO PRÁCTICAS PROFESIONALES</a></li>
+            <li><a href="/vinculacion/practicas">PRÁCTICAS PROFESIONALES</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -187,11 +184,12 @@ import Layout from "../layouts/Layout.astro";
       src="/img/BANNER PAGINA cbtis.jpg"
       alt="Banner CBTis 224"
       class="banner-img"
+      loading="eager"
     />
     <div class="banner-overlay">
       <h1>CBTis No. 224</h1>
       <p>
-        Centro de Bachillerato Tecnológico industrial y de servicios No. 224<br
+        Centro de Bachillerato Tecnológico Industrial y de Servicios No. 224<br
         />"Gral. Salvador Alvarado Rubio"
       </p>
     </div>
@@ -210,7 +208,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card noticia-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/NUEVO%20INGRESO%202025/TAMA%C3%91O%20NOTICIA%20%20(1280%20x%20720%20px)%20(4).jpg"
-          alt="Noticia 1"
+          alt="Resultados Examen Nuevo Ingreso Ciclo Escolar 2025 - 2026"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Resultados Examen Nuevo Ingreso Ciclo Escolar 2025 - 2026</h3>
@@ -219,7 +218,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card noticia-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/4.%20FEB%20-%20JUL%202025/TAMA%C3%91O%20NOTICIA%20%20(1280%20x%20720%20px)%20(3).jpg"
-          alt="Noticia 2"
+          alt="Resultados de la Consulta para Mejorar la Infraestructura del Plantel"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>
@@ -231,7 +231,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card noticia-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/4.%20FEB%20-%20JUL%202025/1%C2%B0%20reunion%20feb%20-%20jul%202025.jpg"
-          alt="Noticia 3"
+          alt="Primera Reunión Padres de Familia Febrero - Julio 2025"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Primera Reunion Padres de Familia Febrero - Julio 2025</h3>
@@ -240,7 +241,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card noticia-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/4.%20FEB%20-%20JUL%202025/TAMA%C3%91O%20NOTICIA%20%20(1280%20x%20720%20px)%20(2).jpg"
-          alt="Noticia 4"
+          alt="Tercera Reunión de Padres de Familia Semestre Feb - Jul 2025"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Tercera Reunion de Padres de Familia Semestre Feb - Jul 2025</h3>
@@ -249,7 +251,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card noticia-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/4.%20FEB%20-%20JUL%202025/TAMA%C3%91O%20NOTICIA%20%20(1280%20x%20720%20px)%20(1).jpg"
-          alt="Noticia 5"
+          alt="Segunda Reunión de Padres de Familia Semestre Feb - Jul 2025"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Segunda Reunión de Padres de Familia Semestre Feb - Jul 2025</h3>
@@ -258,7 +261,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card noticia-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/4.%20FEB%20-%20JUL%202025/HORARIOS%20ASESOR%C3%8DAS%20FEB-JUL%202025.png"
-          alt="Noticia 6"
+          alt="Horarios Asesorías Académicas Semestre Feb - Jul 2025"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Horarios Asesorias Académicas Semestre Feb - Jul 2025</h3>
@@ -272,7 +276,7 @@ import Layout from "../layouts/Layout.astro";
     <h2 class="section-title">Convocatorias</h2>
     <div class="convocatorias-grid mejorada">
       <div class="card convocatoria-card fade-in">
-        <img src="/img/convocatorias/convocatorias1.jpg" alt="Convocatoria 1" />
+        <img src="/img/convocatorias/convocatorias1.jpg" alt="Concurso Nacional de Dibujo" loading="lazy" />
         <div class="card-content">
           <h3>Concurso Nacional de Dibujo</h3>
         </div>
@@ -280,7 +284,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card convocatoria-card fade-in">
         <img
           src="/img/convocatorias/convocatoria merito juvenil 2025.jpg"
-          alt="Convocatoria 2"
+          alt="Premio al Mérito Juvenil 2025"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Premio al Mérito Juvenil 2025</h3>
@@ -289,14 +294,15 @@ import Layout from "../layouts/Layout.astro";
       <div class="card convocatoria-card fade-in">
         <img
           src="/img/convocatorias/feria de la ciencia1.jpg"
-          alt="Convocatoria 3"
+          alt="Feria Mexicana de Ciencias e Ingenierías"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Feria Mexicana de Ciencias e Ingenierías</h3>
         </div>
       </div>
       <div class="card convocatoria-card fade-in">
-        <img src="/img/convocatorias/becadual1.jpg" alt="Convocatoria 4" />
+        <img src="/img/convocatorias/becadual1.jpg" alt="Beca de Estímulo para Educación Dual" loading="lazy" />
         <div class="card-content">
           <h3>Beca de Estímulo para Educación Dual</h3>
         </div>
@@ -304,7 +310,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card convocatoria-card fade-in">
         <img
           src="https://portal.cbtis224.edu.mx/storage/photos/1/2.%20FEB%20-%20JUL%202024/fisica1.jpg"
-          alt="Convocatoria 5"
+          alt="Concurso Nacional de Física"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Concurso Nacional de Física</h3>
@@ -313,7 +320,8 @@ import Layout from "../layouts/Layout.astro";
       <div class="card convocatoria-card fade-in">
         <img
           src="/img/convocatorias/becaspracticas1.jpg"
-          alt="Convocatoria 6"
+          alt="Beca de Estímulo para Prácticas Profesionales"
+          loading="lazy"
         />
         <div class="card-content">
           <h3>Beca de Estímulo para Prácticas Profesionales</h3>
@@ -324,26 +332,32 @@ import Layout from "../layouts/Layout.astro";
 
   <!-- Ubicación -->
   <section class="ubicacion-section">
-    <h2>Ubicacion</h2>
+    <h2>Ubicación</h2>
     <div class="ubicacion-card">
-      <div>
+      <div class="ubicacion-info">
+        <h3>Dirección</h3>
         <p>
-          Av Albert Einstein S/N.<br />Rosales, C.P. 80230<br />Culiacán
-          Rosales, Sinaloa.<br />Teléfonos: (667) 7125767 y 7168398
+          Av. Albert Einstein S/N.<br />Rosales, C.P. 80230<br />Culiacán
+          Rosales, Sinaloa.
+        </p>
+        <h3>Contacto</h3>
+        <p>
+          Teléfonos: <a href="tel:6677125767">(667) 7125767</a> y <a href="tel:6677168398">7168398</a>
         </p>
       </div>
-     
-
-<iframe
- src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9800166793157!2d-107.38631010718275!3d24.796137791037445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd73583292bfd%3A0x2ef4f3b411d8ef0c!2sCentro%20de%20Bachillerato%20Tecnol%C3%B3gico%20Industrial%20y%20de%20Servicios%20%23224!5e0!3m2!1ses!2smx!4v1752483966294!5m2!1ses!2smx" 
-  width="100%"
-  height="400"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
+      <div class="ubicacion-mapa">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9800166793157!2d-107.38631010718275!3d24.796137791037445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd73583292bfd%3A0x2ef4f3b411d8ef0c!2sCentro%20de%20Bachillerato%20Tecnol%C3%B3gico%20Industrial%20y%20de%20Servicios%20%23224!5e0!3m2!1ses!2smx!4v1752483966294!5m2!1ses!2smx" 
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación del CBTis No. 224"
+          aria-label="Mapa de ubicación del Centro de Bachillerato Tecnológico Industrial y de Servicios No. 224">
+        </iframe>
+      </div>
     </div>
   </section>
 
@@ -394,9 +408,11 @@ import Layout from "../layouts/Layout.astro";
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMobileMenu = document.getElementById('close-mobile-menu');
     const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    
     // Animación de entrada global
     const main = document.querySelector(".main-container");
     if (main) main.classList.add("show");
+    
     // Animaciones al hacer scroll para .card
     const observer = new IntersectionObserver(
       (entries) => {
@@ -412,7 +428,8 @@ import Layout from "../layouts/Layout.astro";
     document.querySelectorAll(".card").forEach((card) => {
       observer.observe(card);
     });
-    // Menú hamburguesa móvil
+    
+    // Funciones del menú hamburguesa
     function openMobileMenu() {
       console.log('Abriendo menú hamburguesa');
       if (mobileMenu && mobileMenuBackdrop && hamburgerBtn) {
@@ -420,29 +437,71 @@ import Layout from "../layouts/Layout.astro";
         mobileMenuBackdrop.classList.add('show');
         hamburgerBtn.setAttribute('aria-expanded', 'true');
         mobileMenu.setAttribute('aria-hidden', 'false');
+        hamburgerBtn.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
     }
-    function closeMenu() {
+    
+    function closeMobileMenuFunc() {
       if (mobileMenu && mobileMenuBackdrop && hamburgerBtn) {
         mobileMenu.classList.remove('open');
         mobileMenuBackdrop.classList.remove('show');
         hamburgerBtn.setAttribute('aria-expanded', 'false');
         mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburgerBtn.classList.remove('active');
         document.body.style.overflow = '';
       }
     }
+    
+    // Event listeners para el menú hamburguesa
     hamburgerBtn.addEventListener('click', openMobileMenu);
-    hamburgerBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openMobileMenu(); });
-    if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMenu);
-    if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMenu);
-    // Submenús tipo acordeón en móvil
+    hamburgerBtn.addEventListener('keydown', (e) => { 
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openMobileMenu();
+      }
+    });
+    
+    if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+    if (mobileMenuBackdrop) mobileMenuBackdrop.addEventListener('click', closeMobileMenuFunc);
+    
+    // Cerrar menú con tecla Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenuFunc();
+      }
+    });
+    
+    // Submenús tipo acordeón en móvil con animación mejorada
     document.querySelectorAll('.mobile-menu .dropdown > a').forEach(link => {
-      link.addEventListener('click', function(this: HTMLAnchorElement, e) {
+      link.addEventListener('click', function(e) {
         e.preventDefault();
         const submenu = this.nextElementSibling;
+        const arrow = this.querySelector('.submenu-arrow');
+        
+        // Cerrar otros submenús del mismo nivel
+        const parentMenu = this.closest('.menu, .submenu');
+        if (parentMenu) {
+          const otherDropdowns = parentMenu.querySelectorAll(':scope > .dropdown');
+          otherDropdowns.forEach(dropdown => {
+            if (dropdown !== this.parentElement) {
+              const otherSubmenu = dropdown.querySelector('.submenu');
+              const otherArrow = dropdown.querySelector('.submenu-arrow');
+              if (otherSubmenu && otherSubmenu.classList.contains('open')) {
+                otherSubmenu.classList.remove('open');
+                if (otherArrow) {
+                  otherArrow.style.transform = 'rotate(0deg)';
+                }
+              }
+            }
+          });
+        }
+        
         if (submenu && submenu.classList.contains('submenu')) {
           submenu.classList.toggle('open');
+          if (arrow) {
+            arrow.style.transform = submenu.classList.contains('open') ? 'rotate(90deg)' : 'rotate(0deg)';
+          }
         }
       });
     });
@@ -591,9 +650,8 @@ import Layout from "../layouts/Layout.astro";
     transform: translateX(4px);
   }
   .submenu .dropdown .submenu {
-    left: 100%;
-    top: 0;
     position: absolute;
+    top: 0;
     border-radius: 8px;
     min-width: 210px;
     background: #222b2b;
@@ -601,6 +659,21 @@ import Layout from "../layouts/Layout.astro";
     border: 1.5px solid var(--rojo-cbtis);
     padding: 8px 0;
     animation: fadeInMenu 0.22s cubic-bezier(.4,2,.6,1);
+    /* Posicionamiento inteligente para evitar desbordamiento */
+    left: 100%;
+  }
+  /* Corregir desbordamiento del submenú anidado */
+  .submenu .dropdown:last-child .submenu,
+  .submenu .dropdown:nth-last-child(2) .submenu {
+    left: -100%;
+    right: 100%;
+  }
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 1400px) {
+    .submenu .dropdown .submenu {
+      left: -100%;
+      right: 100%;
+    }
   }
   /* Separadores visuales entre items */
   .submenu li:not(:last-child) a {
@@ -807,25 +880,52 @@ import Layout from "../layouts/Layout.astro";
     z-index: 2;
   }
   .ubicacion-card {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    align-items: center;
+    align-items: start;
     background: #222;
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 1.5px solid var(--rojo-cbtis);
   }
-  .ubicacion-card p {
+  .ubicacion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ubicacion-info h3 {
+    color: var(--rojo-cbtis);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+  .ubicacion-info p {
     color: var(--gris-texto);
     font-size: 1.1rem;
-    margin: 0 0 1rem 0;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .ubicacion-info a {
+    color: var(--rojo-cbtis);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .ubicacion-info a:hover {
+    text-decoration: underline;
+  }
+  .ubicacion-mapa {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
   .ubicacion-card iframe {
     border-radius: 12px;
     border: 2px solid var(--rojo-cbtis);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
   }
   .footer {
     background: var(--negro-cbtis);
@@ -885,8 +985,8 @@ import Layout from "../layouts/Layout.astro";
       padding: 1rem 0.5rem;
     }
     .ubicacion-card {
-      flex-direction: column;
-      align-items: flex-start;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
   @media (max-width: 600px) {
@@ -1120,36 +1220,74 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
     width: 44px;
     height: 44px;
-    background: #222;
+    background: rgba(34, 34, 34, 0.95);
     border: 2px solid var(--rojo-cbtis);
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     z-index: 1200;
-    margin: 0.5rem 0 0 1rem;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    box-shadow: 0 2px 8px #000a;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  .hamburger:hover {
+    background: rgba(169, 33, 31, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(169, 33, 31, 0.3);
+  }
+  .hamburger.active {
+    background: var(--rojo-cbtis);
+    transform: scale(0.95);
   }
   .hamburger span {
     display: block;
-    width: 28px;
-    height: 4px;
-    margin: 4px 0;
+    width: 26px;
+    height: 3px;
+    margin: 3px 0;
     background: var(--blanco);
     border-radius: 2px;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
   }
-  @media (max-width: 900px) {
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+  }
+  .desktop-header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+  }
+  @media (max-width: 1200px) {
     .nav#desktop-nav {
+      display: none !important;
+    }
+    .desktop-header-container {
       display: none !important;
     }
     .hamburger {
       display: flex !important;
-      right: 10px;
+      position: fixed;
+      top: 15px;
+      right: 15px;
       left: auto;
     }
-    /* Elimina display y transform de aquí, ya que los controlamos globalmente */
     .mobile-menu-backdrop {
       display: block;
     }
@@ -1158,23 +1296,25 @@ import Layout from "../layouts/Layout.astro";
   .mobile-menu {
     display: none;
     position: fixed;
-    top: 0; right: 0; left: auto;
-    width: 80vw;
-    max-width: 340px;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: min(85vw, 380px);
     height: 100vh;
-    background: var(--gris-oscuro);
-    box-shadow: -2px 0 24px #000a;
+    background: linear-gradient(135deg, var(--gris-oscuro) 0%, #1a1a1a 100%);
+    backdrop-filter: blur(20px);
+    border-left: 3px solid var(--rojo-cbtis);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3), -2px 0 8px rgba(0, 0, 0, 0.1);
     z-index: 2000;
     flex-direction: column;
-    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    padding: 1.5rem;
     overflow-y: auto;
-    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: translateX(100%);
-    /* Oculto por defecto */
     pointer-events: none;
     opacity: 0;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1200px) {
     .mobile-menu {
       display: flex;
     }
@@ -1183,6 +1323,17 @@ import Layout from "../layouts/Layout.astro";
     transform: translateX(0);
     pointer-events: auto;
     opacity: 1;
+    animation: slideInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
   .mobile-menu .close-mobile-menu {
     background: none;
@@ -1226,24 +1377,26 @@ import Layout from "../layouts/Layout.astro";
   .mobile-menu-backdrop {
     display: none;
     position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0,0,0,0.45);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
     z-index: 1500;
-    transition: opacity 0.3s;
+    transition: all 0.3s ease;
     opacity: 0;
+    pointer-events: none;
   }
   .mobile-menu-backdrop.show {
     display: block;
     opacity: 1;
+    pointer-events: auto;
+    animation: fadeInBackdrop 0.3s ease;
   }
-  @media (max-width: 900px) {
-    .mobile-menu {
-      display: flex;
-      transform: translateX(-100%);
-    }
-    .mobile-menu.open {
-      transform: translateX(0);
-    }
+  @keyframes fadeInBackdrop {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
   /* Mejoras generales para móvil */
   @media (max-width: 700px) {
@@ -1289,10 +1442,19 @@ import Layout from "../layouts/Layout.astro";
       font-size: 0.9rem;
     }
     .ubicacion-card {
-      flex-direction: column;
-      gap: 0.5rem;
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
       padding: 0.7rem;
       border-radius: 10px;
+    }
+    .ubicacion-info {
+      gap: 0.5rem;
+    }
+    .ubicacion-info h3 {
+      font-size: 1rem;
+    }
+    .ubicacion-info p {
+      font-size: 0.95rem;
     }
     .ubicacion-card iframe {
       height: 180px;
@@ -1386,16 +1548,22 @@ import Layout from "../layouts/Layout.astro";
       border-width: 2px;
     }
     .ubicacion-card {
-      flex-direction: column;
-      gap: 0.6rem;
-      padding: 0.4rem;
-      border-radius: 6px;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .ubicacion-info h3 {
+      font-size: 1.1rem;
+    }
+    .ubicacion-info p {
+      font-size: 1rem;
     }
     .ubicacion-card iframe {
       width: 100% !important;
       min-width: 0;
-      height: 140px !important;
-      border-radius: 6px;
+      height: 200px !important;
+      border-radius: 8px;
     }
     .footer-content {
       flex-direction: column;
@@ -1736,7 +1904,6 @@ import Layout from "../layouts/Layout.astro";
     padding-left: 1.2rem;
     margin-top: 0.1rem;
     border-left: 2px solid var(--rojo-cbtis);
-    animation: fadeInMenu 0.22s cubic-bezier(.4,2,.6,1);
     position: static !important;
     background: none !important;
     box-shadow: none !important;
@@ -1745,10 +1912,28 @@ import Layout from "../layouts/Layout.astro";
     top: 0 !important;
     width: 100%;
     z-index: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
   }
   .mobile-menu .submenu.open {
     display: flex;
-    animation: fadeInMenu 0.22s cubic-bezier(.4,2,.6,1);
+    max-height: 500px;
+    opacity: 1;
+    animation: expandSubmenu 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  @keyframes expandSubmenu {
+    from {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   /* Submenús anidados en móvil: verticales, nunca absolutos */
   .mobile-menu .submenu .submenu {
@@ -1769,38 +1954,32 @@ import Layout from "../layouts/Layout.astro";
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: none; }
   }
-  /* Mostrar menú hamburguesa solo en <=1080px */
+  /* Mostrar menú hamburguesa solo en <=1200px */
   .hamburger {
     display: none;
   }
-  @media (max-width: 1200px) {
-    .hamburger {
-      display: flex !important;
-      margin-left: 0;
-      left: auto;
-      right: 1rem;
-    }
-    .nav#desktop-nav {
-      display: none !important;
-    }
-    .mobile-menu {
-      display: flex;
-    }
-  }
-  @media (max-width: 600px) {
-    .hamburger {
-      right: 0.7rem;
-      top: 10px;
-      left: auto;
-      margin-left: 0;
-    }
-  }
-  @media (min-width: 1200px) {
+  @media (min-width: 1201px) {
     .mobile-menu {
       display: none !important;
     }
     .mobile-menu-backdrop {
       display: none !important;
+    }
+    .hamburger {
+      display: none !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .hamburger {
+      top: 12px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+    }
+    .mobile-menu {
+      width: 100vw;
+      border-left: none;
+      border-top: 3px solid var(--rojo-cbtis);
     }
   }
   @media (max-width: 700px) and (min-width: 401px) {
@@ -1878,38 +2057,3 @@ import Layout from "../layouts/Layout.astro";
   }
 </style>
 
-<script>
-  // Script para menú hamburguesa responsive (desliza desde la derecha)
-  document.addEventListener('DOMContentLoaded', function () {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeBtn = document.getElementById('close-mobile-menu');
-
-    // Abrir menú
-    hamburgerBtn.addEventListener('click', function () {
-      mobileMenu.classList.add('open');
-      mobileMenu.setAttribute('aria-hidden', 'false');
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
-    });
-
-    // Cerrar menú
-    closeBtn.addEventListener('click', function () {
-      mobileMenu.classList.remove('open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
-    });
-
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', function (e) {
-      if (
-        mobileMenu.classList.contains('open') &&
-        !mobileMenu.contains(e.target) &&
-        !hamburgerBtn.contains(e.target)
-      ) {
-        mobileMenu.classList.remove('open');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-</script>
