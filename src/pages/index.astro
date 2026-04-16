@@ -195,6 +195,11 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
+  <!-- Botones de Acceso Rápido -->
+  <div class="botones-acceso-container">
+    <a href="/registro-alumnos" class="boton-registro-destacado">Registro de Alumnos</a>
+  </div>
+  
   <!-- Botones minimalistas y discretos: Conócenos y Directorio -->
   <div class="botones-discretos-container">
     <a href="/conocenos" class="boton-discreto">Conócenos</a>
@@ -1181,6 +1186,33 @@ import Layout from "../layouts/Layout.astro";
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 4px 18px rgba(169,33,31,0.18);
   }
+  .botones-acceso-container {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0 1rem 0;
+  }
+  .boton-registro-destacado {
+    background: linear-gradient(135deg, var(--rojo-cbtis), #851817);
+    color: var(--blanco);
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.9rem 2.8rem;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 4px 18px rgba(169, 33, 31, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .boton-registro-destacado:hover, .boton-registro-destacado:focus {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(169, 33, 31, 0.4);
+    background: linear-gradient(135deg, var(--rojo-hover), #a9211f);
+    color: var(--blanco);
+  }
+
   .botones-discretos-container {
     display: flex;
     justify-content: center;
